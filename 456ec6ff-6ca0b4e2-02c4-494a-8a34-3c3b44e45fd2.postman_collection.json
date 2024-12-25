@@ -44,6 +44,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/api/workouts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/workouts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workouts"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
