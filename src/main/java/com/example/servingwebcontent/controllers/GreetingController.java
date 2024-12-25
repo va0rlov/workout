@@ -10,9 +10,9 @@ public class GreetingController {
 
 	/**
 	 * Mapping for the "/greeting" endpoint.
-	 *
+	 * <p>
 	 * The endpoint expects a "name" parameter, which is optional and defaults to "World".
-	 *
+	 * <p>
 	 * The endpoint returns a "greeting" view, and adds a "name" attribute to the model.
 	 *
 	 * @param name the name of the person to greet
