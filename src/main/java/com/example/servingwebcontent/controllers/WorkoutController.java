@@ -21,6 +21,11 @@ public class WorkoutController {
         this.workoutService = workoutService;
     }
 
+    /**
+     * Returns a list of all workouts from the JSON file.
+     *
+     * @return a list of all workouts from the JSON file
+     */
     @GetMapping
     public List<Workout> getAllWorkouts() {
         return workoutService.getAllWorkouts();
