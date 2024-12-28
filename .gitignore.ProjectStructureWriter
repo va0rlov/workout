@@ -33,7 +33,7 @@ build/
 .vscode/
 
 ### CUSTOM ###
-.gitignore.structure
+.gitignore.ProjectStructureWriter
 .gitignore
 .git
 .mvn

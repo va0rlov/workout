@@ -1,6 +1,6 @@
-📄 .gitignore.ProjectStructureWriter
 📄 456ec6ff-6ca0b4e2-02c4-494a-8a34-3c3b44e45fd2.postman_collection.json
 📄 pom.xml
+📄 README.md
 📁 src/
 ├── 📁 main/
 │   ├── 📁 java/
@@ -9,16 +9,17 @@
 │   │   │   │   ├── 📁 servingwebcontent/
 │   │   │   │   │   ├── 📁 controllers/
 │   │   │   │   │   │   ├── 📄 GreetingController.java
+│   │   │   │   │   │   ├── 📄 WorkoutController.java
 │   │   │   │   │   ├── 📁 models/
 │   │   │   │   │   │   ├── 📄 Workout.java
-│   │   │   │   │   ├── 📁 projectstructure/
-│   │   │   │   │   │   ├── 📄 ProjectStructureWriter.java
-│   │   │   │   │   │   ├── 📄 ProjectStructureWriterImpl.java
-│   │   │   │   │   │   ├── 📄 ProjectStructureWriterMain.java
 │   │   │   │   │   ├── 📁 services/
 │   │   │   │   │   │   ├── 📄 WorkoutService.java
 │   │   │   │   │   │   ├── 📄 WorkoutServiceImpl.java
 │   │   │   │   │   ├── 📄 ServingWebContentApplication.java
+│   │   ├── 📁 projectstructure/
+│   │   │   ├── 📄 ProjectStructureWriter.java
+│   │   │   ├── 📄 ProjectStructureWriterImpl.java
+│   │   │   ├── 📄 ProjectStructureWriterMain.java
 │   ├── 📁 resources/
 │   │   ├── 📁 data/
 │   │   │   ├── 📄 workouts.json

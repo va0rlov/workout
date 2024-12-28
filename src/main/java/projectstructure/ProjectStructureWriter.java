@@ -1,4 +1,4 @@
-package com.example.servingwebcontent.projectstructure;
+package projectstructure;
 
 import java.io.IOException;
 
