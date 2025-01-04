@@ -32,11 +32,12 @@ public interface WorkoutService {
     List<Workout> getAllWorkouts(); //
 
     /**
-     * Deletes a workout from the list of workouts at the given index.
+     * Deletes a workout by its ID.
      *
-     * @param index the index of the workout to delete
+     * @param id the ID of the workout to delete
+     * @return true if the workout was deleted, false if the workout was not found
      */
-    void deleteWorkout(int index); //
+    boolean deleteWorkout(UUID id); // Удалить тренировку по ID
 
     /**
      * Returns a workout by its ID.

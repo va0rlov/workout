@@ -77,15 +77,6 @@ public class WorkoutServiceImpl implements WorkoutService {
     }
 
     @Override
-    public void deleteWorkout(int index) {
-        List<Workout> workouts = loadWorkouts();
-        if (index >= 0 && index < workouts.size()) {
-            workouts.remove(index);
-            saveWorkouts(workouts);
-        }
-    }
-
-    @Override
     public Workout getWorkoutById(UUID id) {
         List<Workout> workouts = loadWorkouts();
         return workouts.stream().filter(workout -> workout.id().equals(id)) // Ищем тренировку по ID
@@ -139,5 +130,22 @@ public class WorkoutServiceImpl implements WorkoutService {
         } catch (Exception e) {
             throw new RuntimeException("Ошибка при копировании полей через рефлексию", e);
         }
+    }
+
+    @Override
+    public boolean deleteWorkout(UUID id) {
+        List<Workout> workouts = loadWorkouts();
+        // Ищем тренировку по ID
+        Workout workoutToDelete = getWorkoutById(id);
+
+        if (workoutToDelete != null) {
+            // Удаляем тренировку из списка
+            workouts.remove(workoutToDelete);
+            // Сохраняем обновленный список в файл
+            saveWorkouts(workouts);
+            return true; // Возвращаем true, если тренировка удалена
+        }
+
+        return false; // Возвращаем false, если тренировка не найдена
     }
 }

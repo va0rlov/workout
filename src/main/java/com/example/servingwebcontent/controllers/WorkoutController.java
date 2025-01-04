@@ -77,4 +77,20 @@ public class WorkoutController {
         }
     }
 
+    /**
+     * Deletes a workout by its ID.
+     *
+     * @param id the ID of the workout to delete
+     * @return 204 No Content if the workout was deleted, or 404 Not Found if the workout was not found
+     */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteWorkout(@PathVariable UUID id) {
+        boolean deleted = workoutService.deleteWorkout(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build(); // Возвращаем 204 No Content, если тренировка удалена
+        } else {
+            return ResponseEntity.notFound().build(); // Возвращаем 404 Not Found, если тренировка не найдена
+        }
+    }
+
 }
