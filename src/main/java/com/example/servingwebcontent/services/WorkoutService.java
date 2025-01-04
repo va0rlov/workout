@@ -20,8 +20,9 @@ public interface WorkoutService {
      * Adds a new workout to the list of workouts.
      *
      * @param workout the new workout to add
+     * @return the added workout
      */
-    void addWorkout(Workout workout); //
+    Workout addWorkout(Workout workout); //
 
     /**
      * Returns a list of all workouts.

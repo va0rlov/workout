@@ -4,11 +4,9 @@ package com.example.servingwebcontent.controllers;
 import com.example.servingwebcontent.models.Workout;
 import com.example.servingwebcontent.services.WorkoutService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -48,5 +46,17 @@ public class WorkoutController {
         } else {
             return ResponseEntity.notFound().build(); // Возвращаем 404 Not Found, если тренировка не найдена
         }
+    }
+
+    /**
+     * Creates a new workout.
+     *
+     * @param workout the workout data to create
+     * @return the created workout with its ID
+     */
+    @PostMapping
+    public ResponseEntity<Workout> createWorkout(@RequestBody Workout workout) {
+        Workout createdWorkout = workoutService.addWorkout(workout);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdWorkout); // Возвращаем 201 Created и созданную тренировку
     }
 }

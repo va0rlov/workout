@@ -54,10 +54,25 @@ public class WorkoutServiceImpl implements WorkoutService {
     }
 
     @Override
-    public void addWorkout(Workout workout) {
+    public Workout addWorkout(Workout workout) {
+        // Создаем новую тренировку с автоматически сгенерированным UUID
+        Workout newWorkout = new Workout(
+                workout.workoutName(),
+                workout.workoutType(),
+                workout.durationInMinutes(),
+                workout.caloriesBurned(),
+                workout.workoutDate(),
+                workout.notes()
+        );
+
+        // Загружаем текущий список тренировок
         List<Workout> workouts = loadWorkouts();
-        workouts.add(workout);
+        // Добавляем новую тренировку
+        workouts.add(newWorkout);
+        // Сохраняем обновленный список в файл
         saveWorkouts(workouts);
+
+        return newWorkout; // Возвращаем созданную тренировку
     }
 
     @Override
