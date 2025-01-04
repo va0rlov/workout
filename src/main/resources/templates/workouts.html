@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список тренировок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+        }
+        .update-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<h1>Список тренировок</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Тип</th>
+        <th>Продолжительность (мин)</th>
+        <th>Сожженные калории</th>
+        <th>Дата и время</th>
+        <th>Заметки</th>
+        <th>Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="workout : ${workouts}">
+        <td th:text="${workout.workoutName}"></td>
+        <td th:text="${workout.workoutType}"></td>
+        <td th:text="${workout.durationInMinutes}"></td>
+        <td th:text="${workout.caloriesBurned}"></td>
+        <td th:text="${workout.workoutDate}"></td>
+        <td th:text="${workout.notes}"></td>
+        <td>
+            <button class="update-btn" onclick="alert('Update functionality coming soon!')">Update</button>
+            <button class="delete-btn" th:attr="onclick='deleteWorkout(\'' + ${workout.id} + '\')'">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    /**
+     * Отправляет DELETE-запрос для удаления тренировки.
+     *
+     * @param id ID тренировки для удаления
+     */
+    function deleteWorkout(id) {
+        if (confirm("Вы уверены, что хотите удалить эту тренировку?")) {
+            fetch(`/api/workouts/${id}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Если запрос успешен, перезагружаем страницу
+                    window.location.reload();
+                } else {
+                    alert("Ошибка при удалении тренировки.");
+                }
+            })
+            .catch(error => {
+                console.error("Ошибка:", error);
+                alert("Ошибка при удалении тренировки.");
+            });
+        }
+    }
+</script>
+</body>
+</html>

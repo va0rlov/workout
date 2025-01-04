@@ -63,6 +63,112 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/api/workouts/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/workouts/3318cb8d-68fe-4da1-8948-c96c6afeeb60",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workouts",
+						"3318cb8d-68fe-4da1-8948-c96c6afeeb60"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/workouts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"workoutName\": \"Вечерняя йога\",\n  \"workoutType\": \"Растяжка\",\n  \"durationInMinutes\": 45,\n  \"caloriesBurned\": 250,\n  \"workoutDate\": \"2024-12-27T20:00:00\",\n  \"notes\": \"Расслабляющая тренировка перед сном\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/workouts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workouts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/workouts/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"workoutName\": \"Утренняя пробежка (обновленная)\",\n  \"durationInMinutes\": 40\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/workouts/550e8400-e29b-41d4-a716-446655440000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workouts",
+						"550e8400-e29b-41d4-a716-446655440000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/workouts/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"workoutName\": \"Утренняя пробежка (обновленная)\",\n  \"durationInMinutes\": 40\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/workouts/3f0e1831-7462-432e-813f-75e5f9f09b00",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"workouts",
+						"3f0e1831-7462-432e-813f-75e5f9f09b00"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

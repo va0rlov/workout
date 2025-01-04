@@ -43,35 +43,5 @@
       0
     ],
     "notes": "Расслабляющая тренировка перед сном"
-  },
-  {
-    "id": "7cef0ca2-4e01-4908-b5f2-d3aa951ae3a3",
-    "workoutName": "Вечерняя йога",
-    "workoutType": "Растяжка",
-    "durationInMinutes": 45,
-    "caloriesBurned": 250,
-    "workoutDate": [
-      2024,
-      12,
-      27,
-      20,
-      0
-    ],
-    "notes": "Расслабляющая тренировка перед сном"
-  },
-  {
-    "id": "0bd999d4-2aa9-42f5-99ed-a8893117d768",
-    "workoutName": "Вечерняя йога",
-    "workoutType": "Растяжка",
-    "durationInMinutes": 45,
-    "caloriesBurned": 250,
-    "workoutDate": [
-      2024,
-      12,
-      27,
-      20,
-      0
-    ],
-    "notes": "Расслабляющая тренировка перед сном"
   }
 ]
