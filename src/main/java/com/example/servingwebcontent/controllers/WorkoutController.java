@@ -59,4 +59,22 @@ public class WorkoutController {
         Workout createdWorkout = workoutService.addWorkout(workout);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdWorkout); // Возвращаем 201 Created и созданную тренировку
     }
+
+    /**
+     * Updates an existing workout by its ID.
+     *
+     * @param id             the ID of the workout to update
+     * @param updatedWorkout the updated workout data
+     * @return the updated workout
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<Workout> updateWorkout(@PathVariable UUID id, @RequestBody Workout updatedWorkout) {
+        Workout workout = workoutService.updateWorkout(id, updatedWorkout);
+        if (workout != null) {
+            return ResponseEntity.ok(workout); // Возвращаем 200 OK и обновленную тренировку
+        } else {
+            return ResponseEntity.notFound().build(); // Возвращаем 404 Not Found, если тренировка не найдена
+        }
+    }
+
 }

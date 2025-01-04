@@ -45,4 +45,13 @@ public interface WorkoutService {
      * @return the workout with the specified ID, or null if not found
      */
     Workout getWorkoutById(UUID id); // Получить тренировку по ID
+
+    /**
+     * Updates an existing workout by its ID.
+     *
+     * @param id             the ID of the workout to update
+     * @param updatedWorkout the updated workout data
+     * @return the updated workout, or null if the workout was not found
+     */
+    Workout updateWorkout(UUID id, Workout updatedWorkout); // Обновить тренировку по ID
 }
