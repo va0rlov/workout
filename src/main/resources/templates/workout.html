@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список тренировок</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="datetime-local"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Список тренировок</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Название</th>
+        <th>Тип</th>
+        <th>Продолжительность (мин)</th>
+        <th>Сожженные калории</th>
+        <th>Дата и время</th>
+        <th>Заметки</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Утренняя пробежка</td>
+        <td>Кардио</td>
+        <td>30</td>
+        <td>300</td>
+        <td>2023-10-01T07:00</td>
+        <td>Легкая пробежка в парке</td>
+    </tr>
+    <tr>
+        <td>Силовая тренировка</td>
+        <td>Силовая</td>
+        <td>45</td>
+        <td>450</td>
+        <td>2023-10-02T18:00</td>
+        <td>Тренировка в зале</td>
+    </tr>
+    <tr>
+        <td>Йога</td>
+        <td>Растяжка</td>
+        <td>60</td>
+        <td>200</td>
+        <td>2023-10-03T09:00</td>
+        <td>Утренняя йога</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Добавить новую тренировку</h2>
+<form>
+    <label for="workoutName">Название:</label>
+    <input type="text" id="workoutName" name="workoutName" required>
+
+    <label for="workoutType">Тип:</label>
+    <input type="text" id="workoutType" name="workoutType" required>
+
+    <label for="durationInMinutes">Продолжительность (мин):</label>
+    <input type="number" id="durationInMinutes" name="durationInMinutes" required>
+
+    <label for="caloriesBurned">Сожженные калории:</label>
+    <input type="number" id="caloriesBurned" name="caloriesBurned" required>
+
+    <label for="workoutDate">Дата и время:</label>
+    <input type="datetime-local" id="workoutDate" name="workoutDate" required>
+
+    <label for="notes">Заметки:</label>
+    <input type="text" id="notes" name="notes">
+
+    <button type="submit">Добавить тренировку</button>
+</form>
+</body>
+</html>
