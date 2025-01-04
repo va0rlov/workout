@@ -38,10 +38,26 @@
             color: white;
             border: none;
         }
+        .create-btn {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .create-btn:hover {
+            background-color: #007B9E;
+        }
     </style>
 </head>
 <body>
 <h1>Список тренировок</h1>
+<div>
+    <button class="create-btn" onclick="window.location.href='/new'">Создать тренировку</button>
+</div>
 <table>
     <thead>
     <tr>

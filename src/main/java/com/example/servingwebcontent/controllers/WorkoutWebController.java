@@ -33,4 +33,15 @@ public class WorkoutWebController {
         model.addAttribute("workouts", workouts); // Передаем список тренировок в шаблон
         return "workouts"; // Имя шаблона (workouts.html)
     }
+
+    /**
+     * Отображает форму для создания новой тренировки.
+     *
+     * @return имя шаблона (create-workout.html)
+     */
+    @GetMapping("/new")
+    public String showCreateForm() {
+        return "create-workout"; // Возвращаем шаблон формы создания тренировки
+    }
+
 }

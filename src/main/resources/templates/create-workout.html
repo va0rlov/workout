@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать тренировку</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<h1>Создать тренировку</h1>
+<form id="createWorkoutForm">
+    <label for="workoutName">Название:</label>
+    <input type="text" id="workoutName" name="workoutName" required><br><br>
+
+    <label for="workoutType">Тип:</label>
+    <input type="text" id="workoutType" name="workoutType" required><br><br>
+
+    <label for="durationInMinutes">Продолжительность (мин):</label>
+    <input type="number" id="durationInMinutes" name="durationInMinutes" required><br><br>
+
+    <label for="caloriesBurned">Сожженные калории:</label>
+    <input type="number" id="caloriesBurned" name="caloriesBurned" required><br><br>
+
+    <label for="workoutDate">Дата и время:</label>
+    <input type="datetime-local" id="workoutDate" name="workoutDate" required><br><br>
+
+    <label for="notes">Заметки:</label>
+    <input type="text" id="notes" name="notes"><br><br>
+
+    <button type="button" onclick="submitForm()">Создать</button>
+</form>
+
+<script>
+    /**
+     * Отправляет данные формы для создания тренировки.
+     */
+    function submitForm() {
+        const form = document.getElementById("createWorkoutForm");
+
+        fetch("/api/workouts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                workoutName: form.workoutName.value,
+                workoutType: form.workoutType.value,
+                durationInMinutes: parseInt(form.durationInMinutes.value),
+                caloriesBurned: parseInt(form.caloriesBurned.value),
+                workoutDate: form.workoutDate.value,
+                notes: form.notes.value,
+            }),
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "/"; // Перенаправляем на корневой путь
+            } else {
+                alert("Ошибка при создании тренировки.");
+            }
+        })
+        .catch(error => {
+            console.error("Ошибка:", error);
+            alert("Ошибка при создании тренировки.");
+        });
+    }
+</script>
+</body>
+</html>
