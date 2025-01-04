@@ -1,1 +1,77 @@
-[{"id":"550e8400-e29b-41d4-a716-446655440000","workoutName":"Утренняя пробежка (обновленная)","workoutType":"Кардио","durationInMinutes":40,"caloriesBurned":0,"workoutDate":[2024,12,25,12,0],"notes":"Хорошая пробежка!"},{"id":"550e8400-e29b-41d4-a716-446655440001","workoutName":"Силовая тренировка","workoutType":"Силовая","durationInMinutes":60,"caloriesBurned":500,"workoutDate":[2024,12,26,12,0],"notes":"Тяжело, но эффективно!"},{"id":"3f0e1831-7462-432e-813f-75e5f9f09b00","workoutName":"Вечерняя йога","workoutType":"Растяжка","durationInMinutes":45,"caloriesBurned":250,"workoutDate":[2024,12,27,20,0],"notes":"Расслабляющая тренировка перед сном"}]
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "workoutName": "Утренняя пробежка (обновленная)",
+    "workoutType": "Кардио",
+    "durationInMinutes": 40,
+    "caloriesBurned": 0,
+    "workoutDate": [
+      2024,
+      12,
+      25,
+      12,
+      0
+    ],
+    "notes": "Хорошая пробежка!"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "workoutName": "Силовая тренировка",
+    "workoutType": "Силовая",
+    "durationInMinutes": 60,
+    "caloriesBurned": 500,
+    "workoutDate": [
+      2024,
+      12,
+      26,
+      12,
+      0
+    ],
+    "notes": "Тяжело, но эффективно!"
+  },
+  {
+    "id": "3318cb8d-68fe-4da1-8948-c96c6afeeb60",
+    "workoutName": "Вечерняя йога",
+    "workoutType": "Растяжка",
+    "durationInMinutes": 45,
+    "caloriesBurned": 250,
+    "workoutDate": [
+      2024,
+      12,
+      27,
+      20,
+      0
+    ],
+    "notes": "Расслабляющая тренировка перед сном"
+  },
+  {
+    "id": "7cef0ca2-4e01-4908-b5f2-d3aa951ae3a3",
+    "workoutName": "Вечерняя йога",
+    "workoutType": "Растяжка",
+    "durationInMinutes": 45,
+    "caloriesBurned": 250,
+    "workoutDate": [
+      2024,
+      12,
+      27,
+      20,
+      0
+    ],
+    "notes": "Расслабляющая тренировка перед сном"
+  },
+  {
+    "id": "0bd999d4-2aa9-42f5-99ed-a8893117d768",
+    "workoutName": "Вечерняя йога",
+    "workoutType": "Растяжка",
+    "durationInMinutes": 45,
+    "caloriesBurned": 250,
+    "workoutDate": [
+      2024,
+      12,
+      27,
+      20,
+      0
+    ],
+    "notes": "Расслабляющая тренировка перед сном"
+  }
+]
