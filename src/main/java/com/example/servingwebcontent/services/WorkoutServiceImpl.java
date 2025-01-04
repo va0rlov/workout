@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class WorkoutServiceImpl implements WorkoutService {
@@ -71,5 +72,13 @@ public class WorkoutServiceImpl implements WorkoutService {
             workouts.remove(index);
             saveWorkouts(workouts);
         }
+    }
+
+    @Override
+    public Workout getWorkoutById(UUID id) {
+        List<Workout> workouts = loadWorkouts();
+        return workouts.stream().filter(workout -> workout.id().equals(id)) // Ищем тренировку по ID
+                .findFirst() // Возвращаем первую найденную
+                .orElse(null); // Если не найдено, возвращаем null
     }
 }

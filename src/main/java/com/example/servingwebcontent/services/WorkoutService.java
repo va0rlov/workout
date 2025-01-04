@@ -4,6 +4,7 @@ package com.example.servingwebcontent.services;
 import com.example.servingwebcontent.models.Workout;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface WorkoutService {
     /**
@@ -35,4 +36,12 @@ public interface WorkoutService {
      * @param index the index of the workout to delete
      */
     void deleteWorkout(int index); //
+
+    /**
+     * Returns a workout by its ID.
+     *
+     * @param id the ID of the workout to retrieve
+     * @return the workout with the specified ID, or null if not found
+     */
+    Workout getWorkoutById(UUID id); // Получить тренировку по ID
 }
