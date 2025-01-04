@@ -79,7 +79,7 @@
         <td th:text="${workout.workoutDate}"></td>
         <td th:text="${workout.notes}"></td>
         <td>
-            <button class="update-btn" onclick="alert('Update functionality coming soon!')">Update</button>
+            <button class="update-btn" th:attr="onclick='openEditForm(\'' + ${workout.id} + '\')'">Update</button>
             <button class="delete-btn" th:attr="onclick='deleteWorkout(\'' + ${workout.id} + '\')'">Delete</button>
         </td>
     </tr>
@@ -87,6 +87,15 @@
 </table>
 
 <script>
+    /**
+     * Открывает форму редактирования тренировки.
+     *
+     * @param id ID тренировки для редактирования
+     */
+    function openEditForm(id) {
+        window.location.href = `/edit/${id}`; // Перенаправляем на страницу редактирования
+    }
+
     /**
      * Отправляет DELETE-запрос для удаления тренировки.
      *
