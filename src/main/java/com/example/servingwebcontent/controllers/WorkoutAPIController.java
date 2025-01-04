@@ -13,12 +13,12 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/workouts")
-public class WorkoutController {
+public class WorkoutAPIController {
 
     private final WorkoutService workoutService;
 
     @Autowired
-    public WorkoutController(WorkoutService workoutService) {
+    public WorkoutAPIController(WorkoutService workoutService) {
         this.workoutService = workoutService;
     }
 
