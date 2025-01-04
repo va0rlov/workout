@@ -5,7 +5,13 @@
     "workoutType": "Кардио",
     "durationInMinutes": 30,
     "caloriesBurned": 300,
-    "workoutDate": "2024-12-25T12:00:00",
+    "workoutDate": [
+      2024,
+      12,
+      25,
+      12,
+      0
+    ],
     "notes": "Хорошая пробежка!"
   },
   {
@@ -14,7 +20,28 @@
     "workoutType": "Силовая",
     "durationInMinutes": 60,
     "caloriesBurned": 500,
-    "workoutDate": "2024-12-26T12:00:00",
+    "workoutDate": [
+      2024,
+      12,
+      26,
+      12,
+      0
+    ],
     "notes": "Тяжело, но эффективно!"
+  },
+  {
+    "id": "3f0e1831-7462-432e-813f-75e5f9f09b00",
+    "workoutName": "Вечерняя йога",
+    "workoutType": "Растяжка",
+    "durationInMinutes": 45,
+    "caloriesBurned": 250,
+    "workoutDate": [
+      2024,
+      12,
+      27,
+      20,
+      0
+    ],
+    "notes": "Расслабляющая тренировка перед сном"
   }
 ]

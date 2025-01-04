@@ -3,11 +3,11 @@ package com.example.servingwebcontent.services;
 import com.example.servingwebcontent.models.Workout;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Service
 public class WorkoutServiceImpl implements WorkoutService {
 
-    private static final String JSON_FILE = "data/workouts.json"; // Относительный путь в resources
+    private static final String JSON_FILE_PATH = "src/main/resources/data/workouts.json"; // Абсолютный путь к файлу
     private final ObjectMapper objectMapper;
 
     public WorkoutServiceImpl() {
@@ -27,7 +27,7 @@ public class WorkoutServiceImpl implements WorkoutService {
     @Override
     public void saveWorkouts(List<Workout> workouts) {
         try {
-            File file = new ClassPathResource(JSON_FILE).getFile(); // Получаем файл из resources
+            File file = Paths.get(JSON_FILE_PATH).toFile(); // Получаем файл по абсолютному пути
             objectMapper.writeValue(file, workouts);
         } catch (IOException e) {
             System.err.println("Ошибка при записи файла: " + e.getMessage());
@@ -38,7 +38,7 @@ public class WorkoutServiceImpl implements WorkoutService {
     @Override
     public List<Workout> loadWorkouts() {
         try {
-            File file = new ClassPathResource(JSON_FILE).getFile(); // Получаем файл из resources
+            File file = Paths.get(JSON_FILE_PATH).toFile(); // Получаем файл по абсолютному пути
             if (file.exists()) {
                 System.out.println("Файл найден: " + file.getAbsolutePath());
                 Workout[] workoutsArray = objectMapper.readValue(file, Workout[].class);
@@ -92,7 +92,8 @@ public class WorkoutServiceImpl implements WorkoutService {
     @Override
     public Workout getWorkoutById(UUID id) {
         List<Workout> workouts = loadWorkouts();
-        return workouts.stream().filter(workout -> workout.id().equals(id)) // Ищем тренировку по ID
+        return workouts.stream()
+                .filter(workout -> workout.id().equals(id)) // Ищем тренировку по ID
                 .findFirst() // Возвращаем первую найденную
                 .orElse(null); // Если не найдено, возвращаем null
     }
